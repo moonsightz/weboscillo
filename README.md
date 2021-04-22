@@ -1,10 +1,9 @@
 # weboscillo
 
-Web checker application
-
-## Getting Started
-
 This is a simple web checker application written in Flutter.
+HTML written in UTF-8(ASCII) and Japanese charset(EUC/SJIS/JIS) will be correctly handled.
+
+![home](doc/home.png) ![edit](doc/edit.png)
 
 ## License
 
