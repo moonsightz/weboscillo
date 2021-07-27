@@ -73,8 +73,7 @@ class WebCheckerPageState extends State<WebCheckerPage> {
       body: ListView.builder(
         itemBuilder: (context, i) {
           var data = itemDataList[i];
-          var mainText =
-              data.title == null ? data.url : data.title + ' : ' + data.url;
+          var mainText = data.title + ' : ' + data.url;
           var subLmText = data.lastModified?.toLocal().toString() ?? '';
           var subLmTextLength = subLmText.length;
           if (subLmTextLength > 0) {

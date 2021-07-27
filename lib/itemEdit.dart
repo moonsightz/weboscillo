@@ -1,11 +1,10 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 
 import 'itemData.dart';
 
+@immutable
 class ItemEditForm extends StatefulWidget {
-  ItemData _data;
+  final ItemData _data;
 
   ItemEditForm(ItemData itemData) : this._data = itemData;
 
@@ -44,8 +43,8 @@ class _ItemEditForm extends State<ItemEditForm> {
   Widget build(BuildContext context) {
     var isEnabledGetTitle = false;
     if (this._data.isChecking == false) {
-      var url = this._data.url;
-      if (url != null && url != '' && Uri.parse(url).isAbsolute) {
+      final url = this._data.url;
+      if (url != '' && Uri.parse(url).isAbsolute) {
         isEnabledGetTitle = true;
       }
     }

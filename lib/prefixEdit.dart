@@ -64,7 +64,7 @@ class _PrefixForm extends State<PrefixForm> {
                         value: '',
                         groupValue: this._prefix,
                         onChanged: _handlePrefix,
-                        selected: this._prefix == null || this._prefix == '',
+                        selected: this._prefix == '',
                       ),
                     ],
                   ),

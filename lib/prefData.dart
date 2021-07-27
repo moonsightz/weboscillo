@@ -26,7 +26,6 @@ class PrefData {
   static const String _defaultDefaultProtocol = 'https://';
   static const String _defaultColorString = 'Blue';
   static const bool _defaultDarkMode = false;
-  static const List<ItemData> _defaultItemData = [];
 
   static Future<void> init() async {
     _sharedPref = await SharedPreferences.getInstance();

@@ -4,10 +4,6 @@ import 'prefData.dart';
 import 'prefixEdit.dart';
 import 'themeEdit.dart';
 
-Brightness _getBrightness(bool isDark) {
-  return isDark ? Brightness.dark : Brightness.light;
-}
-
 class PrefEditForm extends StatefulWidget {
   PrefEditForm();
 
@@ -22,8 +18,6 @@ class PrefItem {
 }
 
 class _PrefEditForm extends State<PrefEditForm> {
-  final _formKey = GlobalKey<FormState>();
-
   String _prefix = PrefData.defaultProtocol();
   bool _isDark = PrefData.themeIsDark();
   String _colorName = PrefData.themeColorName();

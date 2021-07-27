@@ -94,8 +94,11 @@ String _getTitle(http.Response response) {
   final head = document.head;
   if (head != null) {
     for (var v in head.querySelectorAll('meta')) {
-      var attrContent = v.attributes['content'];
-      if (v.attributes['http-equiv'] == 'content-type' && attrContent != null) {
+      final attrContent = v.attributes['content'];
+      final equiv = v.attributes['http-equiv'];
+      if (equiv != null && equiv.toLowerCase() == 'content-type'
+          && attrContent != null) {
+        print(attrContent);
         var media = MediaType.parse(attrContent);
         var mediaCharset = media.parameters['charset'];
         if (mediaCharset != null) {
@@ -115,12 +118,15 @@ String _getTitle(http.Response response) {
     // no-hyphen cases are just in case
     switch (charset.toLowerCase()) {
       case 'euc-jp':
+      case 'euc_jp':
       case 'eucjp':
         reBody = jcombu.convertEucJp(response.bodyBytes);
         break;
       case 'shift-jis':
+      case 'shift_jis':
       case 'shiftjis':
       case 's-jis':
+      case 's_jis':
       case 'sjis':
         reBody = jcombu.convertShiftJis(response.bodyBytes);
         break;
@@ -129,6 +135,10 @@ String _getTitle(http.Response response) {
       case 'iso-2022-jp-2':
       case 'iso-2022-jp-3':
       case 'iso-2022-jp-2004':
+      case 'iso_2022_jp':
+      case 'iso_2022_jp_2':
+      case 'iso_2022_jp_3':
+      case 'iso_2022_jp_2004':
       case 'iso2022jp':
       case 'iso2022jp2':
       case 'iso2022jp3':
