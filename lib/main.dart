@@ -31,15 +31,11 @@ class WebOscillo extends StatelessWidget {
     return MaterialApp(
       home: WebCheckerPage(title: 'WebOscillo'),
       theme: ThemeData(
-          primaryColor: color,
-          accentColor: color,
-          primaryColorDark: color,
-          brightness: Brightness.light),
+          colorScheme: ColorScheme.fromSeed(seedColor: color, brightness: Brightness.light),
+          ),
       darkTheme: ThemeData(
-          primaryColor: color,
-          accentColor: color,
-          primaryColorDark: color,
-          brightness: Brightness.dark),
+          colorScheme: ColorScheme.fromSeed(seedColor: color, brightness: Brightness.dark),
+          ),
       themeMode: EasyDynamicTheme.of(context).themeMode,
     );
   }
@@ -98,7 +94,7 @@ class WebCheckerPageState extends State<WebCheckerPage> {
               data.updated
                   ? Container(
                       child: Icon(Icons.arrow_upward,
-                          color: Theme.of(context).accentColor),
+                          color: PrefData.themeColor()),
                       width: 20,
                     )
                   : data.isChecking

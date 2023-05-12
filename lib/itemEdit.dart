@@ -18,7 +18,7 @@ class _ItemEditForm extends State<ItemEditForm> {
   final titleController = TextEditingController();
   String defaultProtocol = 'https://';
 
-  _ItemEditForm({data: ItemData}) : this._data = data;
+  _ItemEditForm({required ItemData data}) : this._data = data;
 
   @override
   void initState() {

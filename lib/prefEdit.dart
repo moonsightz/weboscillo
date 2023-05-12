@@ -14,7 +14,7 @@ class PrefEditForm extends StatefulWidget {
 class PrefItem {
   String title;
 
-  PrefItem({title: String}) : this.title = title;
+  PrefItem({required String title}) : this.title = title;
 }
 
 class _PrefEditForm extends State<PrefEditForm> {
